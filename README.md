@@ -28,3 +28,18 @@ someinternalhost_IP = 10.128.0.13
 	--2023-01-24 11:04:06--  https://158.160.39.44.sslip.io/
 	Resolving 158.160.39.44.sslip.io (158.160.39.44.sslip.io)... 158.160.39.44
 	Connecting to 158.160.39.44.sslip.io (158.160.39.44.sslip.io)|158.160.39.44|:443... connected.
+
+ДЗ к 6 уроку:
+testapp_IP = 51.250.85.180
+testapp_port = 9292
+
+Создание инстанса:
+	yc compute instance create \
+ 	 --name reddit-app1 \
+ 	 --hostname reddit-app1 \
+ 	 --memory=4 \
+ 	 --core-fraction=100 \
+	  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+	  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+ 	 --metadata-from-file user-data=stup.yaml \
+	  --metadata serial-port-enable=1
