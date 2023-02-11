@@ -25,7 +25,7 @@
         },
         {
             "type": "shell",
-            "inline": ["sleep 30"]
+            "inline": ["echo 'install mongod'"]
         },
         {
             "type": "shell",
