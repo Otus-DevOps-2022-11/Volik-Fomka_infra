@@ -31,3 +31,12 @@ variable db_disk_image {
   description = "Disk image for MongoDB"
   default     = "reddit-app-base"
 }
+variable "access_key" {
+  description = "access_key"
+}
+variable "secret_key" {
+  description = "secret_key"
+}
+variable "bucket_name" {
+  description = "bucket_name"
+}
