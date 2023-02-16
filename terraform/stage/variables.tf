@@ -21,5 +21,13 @@ variable subnet_id {
   description = "ru-central1-a"
 }
 variable service_account_key_file {
-  description = "~/.ssh/keys/key.json"
+  description = "~/.ssh/keys/authorized_key.json"
+}
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable db_disk_image {
+  description = "Disk image for MongoDB"
+  default     = "reddit-app-base"
 }
