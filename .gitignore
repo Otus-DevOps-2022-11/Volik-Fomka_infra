@@ -5,3 +5,5 @@
 *.tfstate.backup
 *.tfvars
 .terraform/
+/terraform/prod/backend.tf
+/terraform/stage/backend.tf
