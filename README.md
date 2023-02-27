@@ -43,3 +43,7 @@ testapp_port = 9292
 	  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
  	 --metadata-from-file user-data=stup.yaml \
 	  --metadata serial-port-enable=1
+
+ДЗ к 10 уроку:
+
+После удаления директории и запуска плейбука таска с клонированием изменилась на changed, потому что ansible провёл изменения

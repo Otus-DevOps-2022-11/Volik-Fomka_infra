@@ -6,4 +6,3 @@ echo "ruby version is:"
 ruby -v
 echo "bundler version is:"
 bundler -v
-
