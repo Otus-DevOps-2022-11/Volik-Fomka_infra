@@ -5,8 +5,8 @@ resource "yandex_compute_instance" "db" {
   }
 
   resources {
-    cores  = 2
-    memory = 2
+    cores  = 4
+    memory = 4
   }
 
   boot_disk {
@@ -30,6 +30,7 @@ resource "yandex_compute_instance" "db" {
     agent       = false
     private_key = file(var.private_key_path)
   }
+  /*
   provisioner "file" {
     content     = templatefile("${path.module}/files/mongod.conf.tmpl", { db_ip = yandex_compute_instance.db.network_interface.0.ip_address })
     destination = "/tmp/mongod.conf"
@@ -38,4 +39,5 @@ resource "yandex_compute_instance" "db" {
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
   }
+  */
 }

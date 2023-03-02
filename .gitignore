@@ -7,3 +7,5 @@
 .terraform/
 /terraform/prod/backend.tf
 /terraform/stage/backend.tf
+*.retry
+key.json
