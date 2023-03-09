@@ -5,8 +5,8 @@ resource "yandex_compute_instance" "app" {
     tags = "reddit-app"
   }
   resources {
-    cores  = 2
-    memory = 2
+    cores  = 4
+    memory = 4
   }
 
   boot_disk {
@@ -30,6 +30,7 @@ resource "yandex_compute_instance" "app" {
     agent       = false
     private_key = file(var.private_key_path)
   }
+  /*
   provisioner "file" {
     content     = templatefile("${path.module}/files/puma.service.tmpl", { db_ip = var.db_ip })
     destination = "/tmp/puma.service"
@@ -38,6 +39,5 @@ resource "yandex_compute_instance" "app" {
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
   }
+  */
 }
-
-
