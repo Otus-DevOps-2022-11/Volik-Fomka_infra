@@ -1,0 +1,42 @@
+language: shell
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install packer
+
+script:
+  - find . -name '*.json' -type f -print0 | xargs -0 -n1 packer validate
+
+language: shell
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install terraform
+
+jobs:
+  include:
+    - stage: "Validate Stage Terraform"
+      if: branch = master AND type = push
+      script:
+        - cd terraform/stage
+        - terraform init -backend=false
+        - terraform validate
+        - tflint --module
+
+    - stage: "Validate Prod Terraform"
+      if: branch = release AND type = push
+      script:
+        - cd terraform/prod
+        - terraform init -backend=false
+        - terraform validate
+        - tflint --module
+
+language: python
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install python-pip
+  - sudo pip install ansible-lint
+
+script:
+  - find . -name '*.yml' -type f -print0 | xargs -0 -n1 ansible-lint
