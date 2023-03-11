@@ -1,4 +1,7 @@
 # Volik-Fomka_infra
+
+[![Build Status](https://travis-ci.org/Volik-Fomka/Volik-Fomka_infra.svg?branch=main)](https://travis-ci.org/Volik-Fomka/Volik-Fomka_infra)
+
 Volik-Fomka Infra repository
 
 ДЗ к 5 уроку:

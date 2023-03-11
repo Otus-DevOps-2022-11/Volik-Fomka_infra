@@ -9,3 +9,5 @@
 /terraform/stage/backend.tf
 *.retry
 key.json
+jdauphant.nginx
+.vscode/
